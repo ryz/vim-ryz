@@ -2,18 +2,22 @@
 " vimrc / 'Vim' configuration file 
 "
 " written by ryz <ryzawy@gmail.com>
-" last update: 2011-01-24 21:30:48
+" last update: 2011-10-24 17:17:39
 " ---------------------------------
 " latest changes/additions/removals:
-" [+] backupdir, cross-os/(no)gui config
+" [+] keybindings, pathogen-stuff 
 " [=] -
-" [-] auto save buffer
+" [-] -
 " ---------------------------------
 " to use this vimrc, copy it to
 " for GNU/Linux and Unix: ~/.vimrc
 " for MS-DOS and Win32  : $VIM\_vimrc
 " ---------------------------------
 
+
+" needs to be called BEFORE plugident
+call pathogen#infect()
+call pathogen#helptags()
 
 " general settings {{{
 " ----------------
@@ -119,14 +123,23 @@ set shiftwidth=4 " number of spaces for indent (>>, <<, ...)
 " plugin-stuff {{{
 " ----------------------
 
-call pathogen#infect()
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+
+let g:SuperTabDefaultCompletionType = "context"
 
 " }}}
 
 " key bindings {{{
 " ------------
+
+
+"" .vimrc related stuff
+" open new tab and edit $MYVIMRC
+
+map <F9> :tabnew<CR>:e $MYVIMRC<CR>
+
+" SOURCE current file
+
+map <F10> :so %<CR>
 
 " time and date via F3
 

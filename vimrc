@@ -123,17 +123,29 @@ set shiftwidth=4 " number of spaces for indent (>>, <<, ...)
 " plugin-stuff {{{
 " ----------------------
 
-
+" SuperTab related
 let g:SuperTabDefaultCompletionType = "context"
+
+" TagList related
+let Tlist_Use_Right_Window = 1
 
 " }}}
 
 " key bindings {{{
 " ------------
 
+" unmap cursor/arrow keys for navigation (to help me sticking to hjkl)
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
+
 " remap leader key to , (useful for plugins like NERDCommenter)
 let mapleader=","
-
 
 "" .vimrc related stuff
 " open new tab and edit $MYVIMRC
@@ -141,7 +153,6 @@ let mapleader=","
 map <F9> :tabnew<CR>:e $MYVIMRC<CR>
 
 " SOURCE current file
-,
 map <F10> :so %<CR>
 
 " time and date via F3
@@ -156,9 +167,18 @@ map <S-l> gt
 map tn :tabnew<CR>
 map td :tabclose<CR>
 
+"" executing/compiling files
+" execute current file
 map <F5> :!%<CR>
 
+" compile current TeX file with 'pdflatex' (needs MiKTeX)
+map <F6> :!pdflatex % &<CR>
+
 " programming
+
+" toggle NERDTree and TagList via F-keys
+map <F7> :NERDTreeToggle<CR>
+map <F8> :TlistToggle<CR>
 
 " auto-insert opening and closing characters
 

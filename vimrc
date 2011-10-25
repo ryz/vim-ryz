@@ -2,11 +2,11 @@
 " vimrc / 'Vim' configuration file 
 "
 " written by ryz <ryzawy@gmail.com>
-" last update: 2011-10-24 17:17:39
+" last update: 2011-10-25 11:15:47
 " ---------------------------------
 " latest changes/additions/removals:
 " [+] keybindings, pathogen-stuff 
-" [=] -
+" [=] remapped leader key 
 " [-] -
 " ---------------------------------
 " to use this vimrc, copy it to
@@ -131,6 +131,9 @@ let g:SuperTabDefaultCompletionType = "context"
 " key bindings {{{
 " ------------
 
+" remap leader key to , (useful for plugins like NERDCommenter)
+let mapleader=","
+
 
 "" .vimrc related stuff
 " open new tab and edit $MYVIMRC
@@ -138,7 +141,7 @@ let g:SuperTabDefaultCompletionType = "context"
 map <F9> :tabnew<CR>:e $MYVIMRC<CR>
 
 " SOURCE current file
-
+,
 map <F10> :so %<CR>
 
 " time and date via F3

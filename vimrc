@@ -48,7 +48,7 @@ set incsearch " incremential search ("set is" also works)
 
 set pdev=canon4300 " printer setting
 
-
+set autochdir " working directory is the same as the current file
 
 " set backup directories
 
@@ -129,6 +129,9 @@ let g:SuperTabDefaultCompletionType = "context"
 " TagList related
 let Tlist_Use_Right_Window = 1
 
+" NERDTree related
+let NERDTreeChDirMode = 2
+
 " }}}
 
 " key bindings {{{
@@ -179,6 +182,9 @@ map <F6> :!pdflatex % &<CR>
 " toggle NERDTree and TagList via F-keys
 map <F7> :NERDTreeToggle<CR>
 map <F8> :TlistToggle<CR>
+
+" NERDTree via leader key
+nnoremap <leader>n :NERDTree .<CR>
 
 " auto-insert opening and closing characters
 

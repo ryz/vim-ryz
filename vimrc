@@ -123,11 +123,15 @@ set shiftwidth=4 " number of spaces for indent (>>, <<, ...)
 " plugin-stuff {{{
 " ----------------------
 
+" SnipMate related
+let g:snippets_dir = '$VIM\vimfiles\bundle\snipmate-snippets\snippets'
+
 " SuperTab related
 let g:SuperTabDefaultCompletionType = "context"
 
 " TagList related
 let Tlist_Use_Right_Window = 1
+let Tlist_Ctags_Cmd = 'D:\tools\ctags.exe' " set Exuberant Ctags directory for TagList
 
 " NERDTree related
 let NERDTreeChDirMode = 2

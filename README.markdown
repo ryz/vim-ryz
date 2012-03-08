@@ -8,7 +8,7 @@ Plugins are included via git submodules, some of them need [Exuberant Ctags](htt
 
 ## Download & Installation ##
 If you haven't already, install [Exuberant Ctags](http://ctags.sourceforge.net/) and make sure it
-comes first in `$PATH`.
+comes first in `$PATH`. Alternatively, set the absolute path in your vimrc via `let Tlist_Ctags_Cmd = <PATH>`.
 
 ### Via download package ###
 Download my ready-made package, submodules included. Just unzip into your vim directory (`~/.vim/` or `$HOME/vimfiles` respectively, dependend on your OS), rename 'vimrc' to '.vimrc' on linux or '_vimrc' on Windows, done.

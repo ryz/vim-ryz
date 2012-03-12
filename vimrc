@@ -2,11 +2,11 @@
 " vimrc / 'Vim' configuration file 
 "
 " written by ryz <ryzawy@gmail.com>
-" last update: 2011-10-25 11:15:47
+" last update: 2012-03-12 10:06:33
 " ---------------------------------
 " latest changes/additions/removals:
 " [+] keybindings, pathogen-stuff 
-" [=] remapped leader key 
+" [=] updated theme 
 " [-] -
 " ---------------------------------
 " to use this vimrc, copy it to
@@ -15,7 +15,7 @@
 " ---------------------------------
 
 
-" needs to be called BEFORE plugident
+" pathogen needs to be called BEFORE plugident
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -25,7 +25,7 @@ call pathogen#helptags()
 set nocompatible " don't emulate vi-behaviour, must be the first option
 
 set backup " make backup files
-set backspace=2 " allow backspacing in insert mode over everything else; same as 'backspace=indent,eol,start'
+set backspace=2 " backspacing in insert mode over everything else; same as 'backspace=indent,eol,start'
 filetype on " detect the type of file
 set history=50 " How many lines of history to remember
 set showcmd " display incomplete commands
@@ -34,31 +34,37 @@ if has ("mouse")
     set mouse=a " enable mouse support (all modes) 
 endif
 
-set nowrap " no line wrapping at all
+
+" line numbering
 set number " show line numbers
+set relativenumber " line numbering relative to the current one
 set numberwidth=4 " use 'x' spaces for numbers, e.g. '4' for '999 '
 
 set cursorline " show cursor line (colorscheme dependent)
 set ruler " show the cursor position all the time 
 set nopaste " not in paste mode per default
 
-
+" search related
 set hls " highlight search-pattern
 set incsearch " incremential search ("set is" also works)
+set ignorecase " case-insensitive if search is all-lowercase...
+set smartcase " ...but if one or more characters are uppercase, be case-sensitive
+
+" substitute related
+set gdefault " apply substitutions globally on lines
 
 set pdev=canon4300 " printer setting
 
 set autochdir " working directory is the same as the current file
 
 " set backup directories
-
 if has ("unix")
 set backupdir=~/.vim/backup " where to put backup files under unix/linux
 set directory=~/.vim/tmp " where to put swap (.swp) files under unix/linux
 
 elseif has ("win32")
-set backupdir=$TEMP " where to put backup files
-set directory=$TEMP " where to put swap (.swp) files
+set backupdir=$TEMP " where to put backup files under windows
+set directory=$TEMP " where to put swap (.swp) files under windows
 
 endif
 
@@ -73,9 +79,9 @@ set background=dark
 syntax on " syntax highlighting 
 
 if has ("gui_running")
-    colorscheme desert " nice darkish, stadard GUI theme
+    colorscheme ir_dark " my custom theme, see http://github.com/ryz/vim-irdark
 else
-    colorscheme ir_black " not a standard theme?
+    colorscheme desert " nice darkish, stadard GUI theme
 endif
 
 set t_Co=256 " set terminal to 256 colors
@@ -99,10 +105,17 @@ if has ("folding")
     set foldenable " turn on folding
     set foldmethod=marker " auto-fold on marker
 endif
+
 " }}}
 
 " text formatting/layout {{{
 " ----------------------
+
+" set nowrap " no line wrapping at all
+set wrap " line wrapping
+set textwidth=79 " wrap at line x
+set formatoptions=qrn1 
+set colorcolumn=85 " show colored column at line x (to see if lines are too long)
 
 set ai " autoindent
 set si " smartindent
@@ -113,7 +126,6 @@ set expandtab " use spaces in place of tabs.
 set tabstop=8 " number of spaces for a tab.
 set softtabstop=4 " number of spaces for a tab in editing operations.
 set shiftwidth=4 " number of spaces for indent (>>, <<, ...)
-
 
 "au BufWinLeave * mkview " save fold/view state on exit
 "au BufWinEnter * silent loadview " silently reload saved view state
@@ -131,7 +143,7 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " TagList related
 let Tlist_Use_Right_Window = 1
-let Tlist_Ctags_Cmd = 'D:\tools\ctags.exe' " set Exuberant Ctags directory for TagList
+let Tlist_Ctags_Cmd = 'd:\tools\ctags58\ctags.exe' " set Exuberant Ctags directory for TagList
 
 " NERDTree related
 let NERDTreeChDirMode = 2
@@ -151,24 +163,36 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+" disable the infamous help key
+inoremap <F1> <ESC> 
+nnoremap <F1> <ESC> 
+vnoremap <F1> <ESC> 
+
+" remap 'jj' in INSERT mode to escape
+inoremap jj <ESC>
+
 " remap leader key to , (useful for plugins like NERDCommenter)
 let mapleader=","
 
+" remap leader + space to clear search-highlighting
+nnoremap <leader><space> :noh<CR>
+
+" remap '%' to TAB for fast switching between bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
 "" .vimrc related stuff
 " open new tab and edit $MYVIMRC
-
 map <F9> :tabnew<CR>:e $MYVIMRC<CR>
 
 " SOURCE current file
 map <F10> :so %<CR>
 
 " time and date via F3
-
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 
 " tabs
-
 map <S-h> gT
 map <S-l> gt
 map tn :tabnew<CR>
@@ -190,7 +214,7 @@ map <F8> :TlistToggle<CR>
 " NERDTree via leader key
 nnoremap <leader>n :NERDTree .<CR>
 
-" auto-insert opening and closing characters
+" auto-insert opening and closing characters hack
 
 " imap <C-F> {<CR>}<C-O>O " deprecated alternative
 
@@ -218,7 +242,6 @@ inoremap ''     '
 " everything GUI-related that was not defined earlier
 
 if has ("gui_running")
-
     " set a nice, readable GUI font
     set guifont=Dina:h8:cANSI " not a standard font
 

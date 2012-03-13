@@ -28,3 +28,6 @@
 [submodule "bundle/vim-colors-irdark"]
 	path = bundle/vim-colors-irdark
 	url = git://github.com/ryz/vim-colors-irdark.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git

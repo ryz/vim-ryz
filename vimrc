@@ -1,18 +1,18 @@
-" ---------------------------------
+" -----------------------------------
 " vimrc / 'Vim' configuration file 
 "
 " written by ryz <ryzawy@gmail.com>
-" last update: 2012-03-12 10:06:33
-" ---------------------------------
+" last update: 2012-03-13 09:41:20
+" -----------------------------------
 " latest changes/additions/removals:
-" [+] keybindings, pathogen-stuff 
+" [+] keybindings, general settings 
 " [=] updated theme 
-" [-] -
-" ---------------------------------
+" [-] keybinding: auto bracket insert 
+" -----------------------------------
 " to use this vimrc, copy it to
 " for GNU/Linux and Unix: ~/.vimrc
 " for MS-DOS and Win32  : $VIM\_vimrc
-" ---------------------------------
+" -----------------------------------
 
 
 " pathogen needs to be called BEFORE plugident
@@ -213,26 +213,6 @@ map <F8> :TlistToggle<CR>
 
 " NERDTree via leader key
 nnoremap <leader>n :NERDTree .<CR>
-
-" auto-insert opening and closing characters hack
-
-" imap <C-F> {<CR>}<C-O>O " deprecated alternative
-
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
-
-inoremap (      ()<Left>
-inoremap (<CR>  (<CR>)<Esc>O
-inoremap ((     (
-inoremap ()     ()
-
-inoremap "      ""<Left>
-inoremap ""     "
-
-inoremap '      ''<Left>
-inoremap ''     '
 
 " }}}
 

@@ -115,7 +115,10 @@ endif
 set wrap " line wrapping
 set textwidth=79 " wrap at line x
 set formatoptions=qrn1 
-set colorcolumn=85 " show colored column at line x (to see if lines are too long)
+if exists('+colorcolumn')
+    set colorcolumn=+1 " show colored column at line x (+x of textwidth)
+else
+endif
 
 set ai " autoindent
 set si " smartindent

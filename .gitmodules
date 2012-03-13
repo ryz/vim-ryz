@@ -25,3 +25,6 @@
 [submodule "bundle/snipmate-snippets"]
 	path = bundle/snipmate-snippets
 	url = git://github.com/honza/snipmate-snippets.git
+[submodule "bundle/vim-colors-irdark"]
+	path = bundle/vim-colors-irdark
+	url = git://github.com/ryz/vim-colors-irdark.git

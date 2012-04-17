@@ -2,12 +2,12 @@
 " vimrc / 'Vim' configuration file 
 "
 " written by ryz <ryzawy@gmail.com>
-" last update: 2012-03-13 09:41:20
+" last update: 2012-04-17 10:45:00
 " -----------------------------------
 " latest changes/additions/removals:
-" [+] keybindings, general settings 
-" [=] updated theme 
-" [-] keybinding: auto bracket insert 
+" [+] disabled font anti aliasing
+" [=] changed font to terminus
+" [-] -
 " -----------------------------------
 " to use this vimrc, copy it to
 " for GNU/Linux and Unix: ~/.vimrc
@@ -62,6 +62,10 @@ if has ("unix")
 set backupdir=~/.vim/backup " where to put backup files under unix/linux
 set directory=~/.vim/tmp " where to put swap (.swp) files under unix/linux
 
+elseif has ("mac")
+set backupdir=~/.vim/backup " where to put backup files under mac osx 
+set directory=~/.vim/tmp " where to put swap (.swp) files under mac osx
+
 elseif has ("win32")
 set backupdir=$TEMP " where to put backup files under windows
 set directory=$TEMP " where to put swap (.swp) files under windows
@@ -81,7 +85,7 @@ syntax on " syntax highlighting
 if has ("gui_running")
     colorscheme ir_dark " my custom theme, see http://github.com/ryz/vim-irdark
 else
-    colorscheme desert " nice darkish, stadard GUI theme
+    colorscheme ir_dark " nice darkish, stadard GUI theme
 endif
 
 set t_Co=256 " set terminal to 256 colors
@@ -150,6 +154,7 @@ let Tlist_Ctags_Cmd = 'd:\tools\ctags58\ctags.exe' " set Exuberant Ctags directo
 
 " NERDTree related
 let NERDTreeChDirMode = 2
+let NERDTreeIgnore = ['\.vim$', '\~$', '.png']
 
 " }}}
 
@@ -179,6 +184,10 @@ let mapleader=","
 
 " remap leader + space to clear search-highlighting
 nnoremap <leader><space> :noh<CR>
+
+" remap leader + s to replace word under cursor
+nnoremap <Leader>s :%s#\<<C-r><C-w>\>#
+nnoremap <Leader>S :%s#<C-r><C-w>#
 
 " remap '%' to TAB for fast switching between bracket pairs
 nnoremap <tab> %
@@ -226,7 +235,16 @@ nnoremap <leader>n :NERDTree .<CR>
 
 if has ("gui_running")
     " set a nice, readable GUI font
-    set guifont=Dina:h8:cANSI " not a standard font
+
+    if has ("win32") 
+        set guifont=Dina:h16 " not a standard font
+    endif
+
+    if has ("mac") 
+        set guifont=TerminusMedium:h12 " not a standard font
+    endif
+
+    set noantialias " turn off font anti aliasing
 
     " turn off the GUI widgets
     set guioptions-=T " remove the toolbar (icons on top of the screen)

@@ -155,7 +155,7 @@ let Tlist_Ctags_Cmd = 'd:\tools\ctags58\ctags.exe' " set Exuberant Ctags directo
 " NERDTree related
 let NERDTreeShowBookmarks = 1
 let NERDTreeChDirMode = 2
-let NERDTreeIgnore = ['\.vim$', '\~$', '.png']
+let NERDTreeIgnore = ['\.vim$', '\~$', '.png', '.swp']
 
 " }}}
 

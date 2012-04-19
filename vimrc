@@ -85,7 +85,7 @@ syntax on " syntax highlighting
 if has ("gui_running")
     colorscheme ir_dark " my custom theme, see http://github.com/ryz/vim-irdark
 else
-    colorscheme ir_dark " nice darkish, stadard GUI theme
+    colorscheme solarized " great colortheme
 endif
 
 set t_Co=256 " set terminal to 256 colors

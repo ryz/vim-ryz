@@ -10,7 +10,7 @@ Plugins are included via git submodules, some of them need [Exuberant Ctags](htt
 Optional: If you haven't already, install [Exuberant Ctags](http://ctags.sourceforge.net/) and make sure it
 comes first in `$PATH`. Alternatively, set the absolute path in your vimrc via `let Tlist_Ctags_Cmd = <PATH>`.
 
-### Via git ###
+### Via Git ###
 If you're using MAC OS X or GNU/Linux (or any other "POSIX compliant" system really) and Git v1.6.5 or later simply copy and paste these lines:
 
     cd ~
@@ -19,7 +19,7 @@ If you're using MAC OS X or GNU/Linux (or any other "POSIX compliant" system rea
 
 Everything should be set now.
 
-#### Description ####
+#### Detailed Description ####
 Clone this repository into your home directory (`~/`) via `git clone --recursive git://github.com/ryz/vim-ryz.git ~/.vim`. Don't forget the `--recursive` flag, as it's needed to recursively clone plugins included via submodules!
 
 To keep things tidy, create a symbolic link pointing to the vimrc file in your home directory: 

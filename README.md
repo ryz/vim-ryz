@@ -30,3 +30,14 @@ Everything should be set up now.
 
 ### Via download package ###
 Download my ready-made package, submodules included. Just unzip into your vim directory (`~/.vim/` or `$HOME/vimfiles` respectively, dependend on your OS). rename 'vimrc' to '.vimrc' on linux or '_vimrc' on Windows, done.
+
+## Plugin Descriptions ##
+Here's a short overview for the plugins I'm using and how i've customized them to my needs. I'll add descriptions over time.
+
+### NERDTree ###
+The NERD tree allows you to explore your filesystem and to open files and directories. It presents the filesystem to you in the form of a tree which you manipulate with the keyboard and/or mouse. It also allows you to perform simple filesystem operations.
+
+### MRU ###
+Most Recently Used (MRU) plugin provides an easy access to a list of recently opened/edited files in Vim.
+
+The `<Leader>m` mapping will run MRU for fast access to recent files.

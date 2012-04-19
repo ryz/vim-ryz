@@ -194,6 +194,9 @@ nnoremap <Leader>S :%s#<C-r><C-w>#
 nnoremap <tab> %
 vnoremap <tab> %
 
+" map leader + m to open the MRU plugin
+nnoremap <leader>m :MRU<CR>
+
 "" .vimrc related stuff
 " open new tab and edit $MYVIMRC
 map <F9> :tabnew<CR>:e $MYVIMRC<CR>

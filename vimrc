@@ -211,11 +211,11 @@ map <leader>tc :tabclose<CR>
 " map leader + space to clear search-highlighting
 nnoremap <leader><space> :noh<CR>
 
-" remap leader + s to replace word under cursor
+" map leader + s to replace word under cursor
 nnoremap <Leader>s :%s#\<<C-r><C-w>\>#
 nnoremap <Leader>S :%s#<C-r><C-w>#
 
-" remap '%' to TAB for fast switching between bracket pairs
+" map '%' to TAB for fast switching between bracket pairs
 nnoremap <tab> %
 vnoremap <tab> %
 

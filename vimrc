@@ -78,6 +78,11 @@ set wildmenu " sane <Tab> completion, stops at longest unique prefix
 set wildmode=list:longest,full " enables a list of possible filenames to tab-completed
 set wildignore=*.o,*.png,*.jpg " ignore these filetypes while expanding chars
 
+" disable sound on errors
+set noerrorbells
+set t_vb=
+set tm=500
+
 " }}}
 
 " theme/colors {{{

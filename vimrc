@@ -202,7 +202,11 @@ inoremap jj <ESC>
 " remap leader key to , (useful for plugins like NERDCommenter)
 let mapleader=","
 
-" remap leader + space to clear search-highlighting
+" some leader mappings
+" fast window switching
+map <leader>w <C-w><C-w>
+
+" map leader + space to clear search-highlighting
 nnoremap <leader><space> :noh<CR>
 
 " remap leader + s to replace word under cursor

@@ -25,6 +25,10 @@ cd ~
 git clone --recursive http://github.com/ryz/vim-ryz.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 
+cd ~/.vim
+mkdir -v tmp
+mkdir -v backup
+
 echo "ryz' .vim was successfully installed and configured, have fun!"
 
 # deprecated, only needed before Git version 1.6.5

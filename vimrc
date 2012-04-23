@@ -105,7 +105,16 @@ set t_Co=256 " set terminal to 256 colors
 " status bar {{{
 " ----------------------
 
-set statusline=%F%m%r%h%w\ [%{&ff}][%Y]\ [ascii=\%03.3b]\ [hex=\%02.2B]\ [pos=%04l,%04v][%p%%]\ [ln=%L] " informative status line 
+" show paste mode in status bar
+function! HasPaste()
+    if &paste
+        return '[PASTE]'
+    else
+        return ''
+    endif
+endfunction
+
+set statusline=%{hostname()}:%F%m%r%h%w\ [%{&ff}][%Y]\ [ascii=\%03.3b]\ [hex=\%02.2B]\ [pos=%04l,%04v][%p%%]\ [ln=%L]\ %{HasPaste()}" informative status line
 set laststatus=2 " always show status line 
 set cmdheight=2 " height of the command line, e.g. two lines; helps to avoid 'hit ENTER to continue' message
 set shortmess=a " keep status messages short; helps to avoid 'hit ENTER to continue' message

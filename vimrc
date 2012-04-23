@@ -205,6 +205,8 @@ let mapleader=","
 " some leader mappings
 " fast window switching
 map <leader>w <C-w><C-w>
+map <leader>tn :tabnew<CR>
+map <leader>tc :tabclose<CR>
 
 " map leader + space to clear search-highlighting
 nnoremap <leader><space> :noh<CR>
@@ -234,8 +236,6 @@ imap <F3> <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 " tabs
 map <S-h> gT
 map <S-l> gt
-map tn :tabnew<CR>
-map td :tabclose<CR>
 
 "" executing/compiling files
 " execute current file

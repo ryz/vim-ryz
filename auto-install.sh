@@ -29,7 +29,8 @@ cd ~
 git clone --recursive http://github.com/ryz/vim-ryz.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 
-cd $VIMHOMEDIR 
+echo
+cd -v $VIMHOMEDIR 
 mkdir -v tmp
 mkdir -v backup
 

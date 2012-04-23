@@ -247,11 +247,10 @@ map <F6> :!pdflatex % &<CR>
 " programming
 
 " toggle NERDTree and TagList via F-keys
-map <F7> :NERDTreeToggle<CR>
 map <F8> :TlistToggle<CR>
 
 " NERDTree via leader key
-nnoremap <leader>n :NERDTree .<CR>
+nnoremap <leader>n :NERDTreeToggle .<CR>
 
 " }}}
 

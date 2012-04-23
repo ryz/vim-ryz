@@ -74,6 +74,9 @@ endif
 
 set fileformats=unix,dos,mac " support all three, in this order
 
+set wildmenu " sane <Tab> completion, stops at longest unique prefix
+set wildmode=list:longest,full " enables a list of possible filenames to tab-completed
+
 " }}}
 
 " theme/colors {{{

@@ -53,9 +53,7 @@ set ignorecase " case-insensitive if search is all-lowercase...
 set smartcase " ...but if one or more characters are uppercase, be case-sensitive
 
 " substitute related
-set gdefault " apply substitutions globally on lines
-
-set pdev=canon4300 " printer setting
+set gdefault " add g (global) flag to subsitutions 
 
 set autochdir " working directory is the same as the current file
 
@@ -85,7 +83,8 @@ set background=dark
 syntax on " syntax highlighting 
 
 if has ("gui_running")
-    colorscheme ir_dark " my custom theme, see http://github.com/ryz/vim-irdark
+    colorscheme solarized " awesome theme
+    " colorscheme ir_dark " my custom theme, see http://github.com/ryz/vim-irdark
 else
     colorscheme solarized " great colortheme
 endif

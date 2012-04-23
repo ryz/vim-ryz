@@ -34,6 +34,8 @@ if has ("mouse")
     set mouse=a " enable mouse support (all modes) 
 endif
 
+" scrolling 
+set scrolloff=3 " start scrolling three lines before the horizontal window border
 
 " line numbering
 set number " show line numbers

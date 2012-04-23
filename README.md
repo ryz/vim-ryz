@@ -52,6 +52,6 @@ Here's a short overview for the plugins I'm using and how i've customized them t
   Custom commands:
     `<Leader>n` - Open NERDTree
 
-* [MRU](https://github.com/vim-scripts/mru.vim): Aasy access to a list of recently opened/edited files in Vim.
+* [MRU](https://github.com/vim-scripts/mru.vim): Easy access to a list of recently opened/edited files in Vim.
   Custom commands:
     `<Leader>m` - Run MRU for fast access to recent files.

@@ -1,18 +1,15 @@
-" -----------------------------------
+" -----------------------------------------------------------------------------
 " vimrc / 'Vim' configuration file 
 "
-" written by ryz <ryzawy@gmail.com>
-" last update: 2012-04-17 10:45:00
-" -----------------------------------
-" latest changes/additions/removals:
-" [+] disabled font anti aliasing
-" [=] changed font to terminus
-" [-] -
-" -----------------------------------
-" to use this vimrc, copy it to
-" for GNU/Linux and Unix: ~/.vimrc
-" for MS-DOS and Win32  : $VIM\_vimrc
-" -----------------------------------
+" Written by ryz <ryzawy@gmail.com>
+" Last update: 2012-04-24 
+" -----------------------------------------------------------------------------
+" To use this vimrc, paste this in a terminal:
+" curl -o - https://raw.github.com/ryz/vim-ryz/master/auto-install.sh | sh 
+"
+" Or clone via Git: 
+" git clone --recursive git://github.com/ryz/vim-ryz.git
+" -----------------------------------------------------------------------------
 
 
 " pathogen needs to be called BEFORE plugident
@@ -53,7 +50,7 @@ set ignorecase " case-insensitive if search is all-lowercase...
 set smartcase " ...but if one or more characters are uppercase, be case-sensitive
 
 " substitute related
-set gdefault " add g (global) flag to subsitutions 
+set gdefault " add g (global) flag to subsitutions per default
 
 set autochdir " working directory is the same as the current file
 

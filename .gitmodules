@@ -70,3 +70,6 @@
 	path = bundle/vim-neocomplcache-snippets
 	url = https://github.com/Shougo/neocomplcache-snippets-complete.git
         ignore = dirty
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git

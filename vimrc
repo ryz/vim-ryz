@@ -74,6 +74,7 @@ set fileformats=unix,dos,mac " support all three, in this order
 set wildmenu " sane <Tab> completion, stops at longest unique prefix
 set wildmode=list:longest,full " enables a list of possible filenames to tab-completed
 set wildignore=*.o,*.png,*.jpg " ignore these filetypes while expanding chars
+set wildignore=*.DS_Store
 
 " disable sound on errors
 set noerrorbells

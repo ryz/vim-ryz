@@ -217,7 +217,11 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " map leader + m to open the MRU plugin
-nnoremap <leader>m :MRU<CR>
+nnoremap <leader>m :CtrlPMRU<CR>
+nnoremap <leader>cp :CtrlP<CR>
+
+" Ack maps to ,a
+map <leader>a :Ack
 
 "" .vimrc related stuff
 " open new tab and edit $MYVIMRC

@@ -21,7 +21,6 @@ call pathogen#helptags()
 
 set nocompatible " don't emulate vi-behaviour, must be the first option
 
-set backup " make backup files
 set backspace=2 " backspacing in insert mode over everything else; same as 'backspace=indent,eol,start'
 filetype on " detect the type of file
 set history=50 " How many lines of history to remember
@@ -54,19 +53,31 @@ set gdefault " add g (global) flag to subsitutions per default
 
 set autochdir " working directory is the same as the current file
 
-" set backup directories
+" backup settings
+
+set backup " make backup files
+
+if has('persistent_undo')
+    set undofile " persistent undo
+    set undolevels=1000 " max number of changes that can be undone
+    set undoreload=10000 " max number of lines to save for undo on a buffer reload
+endif
+
+" backup/undo directories 
 if has ("unix")
-set backupdir=~/.vim/backup " where to put backup files under unix/linux
-set directory=~/.vim/tmp " where to put swap (.swp) files under unix/linux
+    set backupdir=~/.vim/backup " where to put backup files under unix/linux
+    set directory=~/.vim/tmp " where to put swap (.swp) files under unix/linux
+    set undodir=~/.vim/undo " where to put undo stuff
 
 elseif has ("mac")
-set backupdir=~/.vim/backup " where to put backup files under mac osx 
-set directory=~/.vim/tmp " where to put swap (.swp) files under mac osx
+    set backupdir=~/.vim/backup " where to put backup files under mac osx 
+    set directory=~/.vim/tmp " where to put swap (.swp) files under mac osx
+    set undodir=~/.vim/undo " where to put undo stuff
 
 elseif has ("win32")
-set backupdir=$TEMP " where to put backup files under windows
-set directory=$TEMP " where to put swap (.swp) files under windows
-
+    set backupdir=$TEMP " where to put backup files under windows
+    set directory=$TEMP " where to put swap (.swp) files under windows
+    set undodir=$TEMP " where to put undo stuff
 endif
 
 set fileformats=unix,dos,mac " support all three, in this order

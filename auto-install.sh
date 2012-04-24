@@ -33,6 +33,7 @@ echo
 cd $VIMHOMEDIR 
 mkdir -v tmp
 mkdir -v backup
+mkdir -v undo
 
 echo
 echo "ryz' .vim was successfully installed and configured, have fun!"

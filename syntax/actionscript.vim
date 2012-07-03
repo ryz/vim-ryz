@@ -83,6 +83,7 @@ syn keyword as3Constants			ALPHA BLUE GREEN RED DARKEN  DIFFERENCE  ERASE  HARDL
 syn keyword actionScriptInclude #include #initClip #endInitClip
 syn keyword as3Errors EOFError  IllegalOperationError  IOError  MemoryError  ScriptTimeoutError  StackOverflowError ArgumentError DefinitionError EvalError RangeError ReferenceError SecurityError SyntaxError TypeError URIError VerifyError VideoError InvalidSWFError
 syn keyword as3Events	DataEvent ErrorEvent Event ScrollEvent ProgressEvent SecurityErrorEvent ComponentEvent ProgressEvent IOErrorEvent ComponentEvent ColorPickerEvent ListEvent MouseEvent TextEvent DataChangeEvent HTTPStatusEvent IMEEvent TimerEvent TweenEvent AutoLayoutEvent CaptionChangeEvent CaptionTargetEvent SoundEvent VideoEvent  SkinErrorEvent LayoutEvent VideoProgressEvent MetadataEvent IVPEvent KeyboardEvent FocusEvent FullScreenEvent AsyncErrorEvent FocusEvent KeyboardEvent NetStatusEvent StatusEvent SyncEvent DataGridEvent SliderEvent
+syn keyword as3FlixelClass FlxBasic FlxButton FlxCamera FlxEmitter FlxG FlxGame FlxGroup FlxObject FlxParticle FlxPath FlxPoint FlxRect FlxSave FlxSound FlxSprite FlxState FlxText FlxTileblock FlxTilemap FlxTimer FlxU
 
 " catch errors caused by wrong parenthesis
 syn match   actionScriptInParen     contained "[{}]"
@@ -99,7 +100,7 @@ endif
 if version >= 508 || !exists("did_actionscript_syn_inits")
   if version < 508
     let did_actionscript_syn_inits = 1
-    command -nargs=+ HiLink hi link <args>
+    !command -nargs=+ HiLink hi link <args>
   else
     command -nargs=+ HiLink hi def link <args>
   endif
@@ -162,6 +163,7 @@ if version >= 508 || !exists("did_actionscript_syn_inits")
   HiLink as3Constants			Type
   HiLink as3Errors			Constant
   HiLink as3Events			Constant
+  hi def as3FlixelClass                 gui=NONE guifg=#d33682 
   delcommand HiLink
 endif
 

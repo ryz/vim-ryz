@@ -1,4 +1,4 @@
-" -----------------------------------------------------------------------------
+    " -----------------------------------------------------------------------------
 " vimrc / 'Vim' configuration file 
 "
 " Written by ryz <ryzawy@gmail.com>
@@ -174,6 +174,10 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+
+autocmd BufRead *.as set filetype=actionscript
+
+
 " }}}
 
 " plugin-stuff {{{

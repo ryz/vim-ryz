@@ -11,7 +11,6 @@
 " git clone --recursive git://github.com/ryz/vim-ryz.git
 " -----------------------------------------------------------------------------
 
-
 " pathogen needs to be called BEFORE plugident
 call pathogen#infect()
 call pathogen#helptags()
@@ -32,6 +31,7 @@ endif
 
 " scrolling 
 set scrolloff=3 " start scrolling three lines before the horizontal window border
+set scroll=15 " lines to jump when scrolling
 
 " line numbering
 set number " show line numbers
@@ -213,6 +213,10 @@ noremap   <Right>  <NOP>
 inoremap <F1> <ESC> 
 nnoremap <F1> <ESC> 
 vnoremap <F1> <ESC> 
+
+" map Shift+j/k to scrolling the screen
+map <S-j> <C-D>
+map <S-k> <C-U>
 
 " remap 'jj' in INSERT mode to escape
 inoremap jj <ESC>

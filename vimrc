@@ -103,7 +103,8 @@ set background=dark
 syntax on " syntax highlighting 
 
 if has ("gui_running")
-    colorscheme solarized " awesome theme
+    colorscheme monokai
+    " colorscheme solarized " awesome theme
     " colorscheme ir_dark " my custom theme, see http://github.com/ryz/vim-irdark
 else
     colorscheme solarized " great colortheme
@@ -301,7 +302,8 @@ if has ("gui_running")
     endif
 
     if has ("mac") 
-        set guifont=TerminusMedium:h12 " not a standard font
+        " set guifont=TerminusMedium:h12 " not a standard font
+        set guifont=ProggyCleanTT:h16
     endif
 
     set noantialias " turn off font anti aliasing

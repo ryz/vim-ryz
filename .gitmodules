@@ -73,3 +73,6 @@
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "bundle/vim-dict-node"]
+	path = bundle/vim-dict-node
+	url = git://github.com/guileen/vim-node.git

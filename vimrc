@@ -180,6 +180,7 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
+" Override default *.as (Atlas) filetype recognition to AS3
 autocmd BufRead *.as set filetype=actionscript
 
 

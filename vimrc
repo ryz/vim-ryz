@@ -182,7 +182,7 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 
 " Override default *.as (Atlas) filetype recognition to AS3
 autocmd BufRead *.as set filetype=actionscript
-
+au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 
 " }}}
 

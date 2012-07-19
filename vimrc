@@ -1,8 +1,10 @@
-    " -----------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " vimrc / 'Vim' configuration file 
 "
 " Written by ryz <ryzawy@gmail.com>
-" Last update: 2012-04-24 
+" -----------------------------------------------------------------------------
+" For more info on this vimrc, visit:
+" http://github.com/ryz/vim-ryz
 " -----------------------------------------------------------------------------
 " To use this vimrc, paste this in a terminal:
 " curl -o - https://raw.github.com/ryz/vim-ryz/master/auto-install.sh | sh 
@@ -165,7 +167,9 @@ set shiftwidth=4 " number of spaces for indent (>>, <<, ...)
 "au BufWinLeave * mkview " save fold/view state on exit
 "au BufWinEnter * silent loadview " silently reload saved view state
 
-"  syntax / omni completion
+" }}}
+
+"  syntax / omni completion {{{
 " ----------------------
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -289,8 +293,8 @@ nnoremap <leader>n :NERDTreeToggle .<CR>
 
 " everything GUI-related that was not defined earlier
 
+" check for gVim
 if has ("gui_running")
-    " set a nice, readable GUI font
 
     if has ("win32") 
         set guifont=Dina:h16 " not a standard font
@@ -302,7 +306,7 @@ if has ("gui_running")
 
     set noantialias " turn off font anti aliasing
 
-    " turn off the GUI widgets
+    " remove those ugly GUI widgets
     set guioptions-=T " remove the toolbar (icons on top of the screen)
     set guioptions-=m " remove the menu bar 
     set guioptions-=r " remove the right scroll bar

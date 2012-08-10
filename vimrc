@@ -198,7 +198,7 @@ let g:SuperTabDefaultCompletionType = "context"
 " TagList related
 let Tlist_Use_Right_Window = 1
 if has ('win32')
-let Tlist_Ctags_Cmd = 'd:\tools\ctags58\ctags.exe' " set Exuberant Ctags directory for TagList
+    let Tlist_Ctags_Cmd = 'd:\tools\ctags58\ctags.exe' " set Exuberant Ctags directory for TagList
 endif
 
 " NERDTree related
@@ -300,14 +300,7 @@ nnoremap <leader>n :NERDTreeToggle .<CR>
 " check for gVim
 if has ("gui_running")
 
-    if has ("win32") 
-        set guifont=Dina:h16 " not a standard font
-    endif
-
-    if has ("mac") 
-        " set guifont=TerminusMedium:h12 " not a standard font
-        set guifont=ProggyCleanTT:h16
-    endif
+    set guifont=ProFont:h9 " set GUI font
 
     set noantialias " turn off font anti aliasing
 

@@ -204,57 +204,6 @@ let NERDTreeShowBookmarks = 1
 let NERDTreeChDirMode = 2
 let NERDTreeIgnore = ['\.vim$', '\~$', '.png', '.swp']
 
-" NeoComplCache
-if index(g:pathogen_disabled, 'neocomplcache') == -1
-    let g:neocomplcache_enable_at_startup = 1
-    let g:neocomplcache_enable_auto_select = 1
-    let g:neocomplcache_enable_smart_case = 1
-    let g:neocomplcache_enable_camel_case_completion = 1
-    let g:neocomplcache_enable_underbar_completion = 1
-
-    let g:neocomplcache_source_disable = {
-      \ 'syntax_complete': 1,
-    \ }
-
-    let g:neocomplcache_auto_completion_start_length = 2
-
-    if !exists('g:neocomplcache_omni_patterns')
-      let g:neocomplcache_omni_patterns = {}
-    endif
-
-    let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-    let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-    let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-    let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-
-        " Recommended key-mappings.
-    " <CR>: close popup and save indent.
-    inoremap <expr><CR>  neocomplcache#close_popup() . "\<CR>"
-    " <C-h>, <BS>: close popup and delete backword char.
-    inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-    inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-    inoremap <expr><C-y>  neocomplcache#close_popup()
-    inoremap <expr><C-e>  neocomplcache#cancel_popup()
-
-    " use <Tab> to complete words, and also handle snippets
-    function! TabWrapper(...)
-      if a:0 == 0
-        if pumvisible()
-          " close the popup and expand snippets
-          return "\<C-y>\<C-R>=TabWrapper(1)\<CR>"
-        else
-          echomsg "2"
-          " popup is closed, use normal SnipMate behavior
-          return TriggerSnippet()
-        endif
-      else
-        echomsg "3"
-        " expand snippets, but don't insert a <Tab>
-        return substitute(TriggerSnippet(), '\t', '', '')
-      endif
-    endfunction
-    autocmd VimEnter * inoremap <Tab> <C-R>=TabWrapper()<CR>
-endif    
 " }}}
 
 " key bindings {{{

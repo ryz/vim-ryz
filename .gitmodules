@@ -76,3 +76,6 @@
 [submodule "bundle/vim-dict-node"]
 	path = bundle/vim-dict-node
 	url = git://github.com/guileen/vim-node.git
+[submodule "bundle/vim-delimitmate"]
+	path = bundle/vim-delimitmate
+	url = git://github.com/Raimondi/delimitMate.git

@@ -107,7 +107,7 @@ if has ("gui_running")
     " colorscheme solarized " awesome theme
     " colorscheme ir_dark " my custom theme, see http://github.com/ryz/vim-irdark
 else
-    colorscheme solarized " great colortheme
+    colorscheme monokai " great colortheme
 endif
 
 set t_Co=256 " set terminal to 256 colors

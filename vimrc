@@ -197,7 +197,9 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " TagList related
 let Tlist_Use_Right_Window = 1
+if has ('win32')
 let Tlist_Ctags_Cmd = 'd:\tools\ctags58\ctags.exe' " set Exuberant Ctags directory for TagList
+endif
 
 " NERDTree related
 let NERDTreeShowBookmarks = 1

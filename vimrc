@@ -204,6 +204,24 @@ let NERDTreeShowBookmarks = 1
 let NERDTreeChDirMode = 2
 let NERDTreeIgnore = ['\.vim$', '\~$', '.png', '.swp']
 
+" NeoComplCache 
+
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 3
+
+
+imap <C-k> <Plug>(neocomplcache_snippets_expand)
+
+" numbers.vim
+" This plugin will alternate between relative numbering (normal mode) and absolute numbering (insert mode) depending on the mode you are in.
+nnoremap <F3> :NumbersToggle<CR>
+
+" Powerline
+
+
 " }}}
 
 " key bindings {{{
@@ -288,6 +306,7 @@ map <F8> :TlistToggle<CR>
 " NERDTree via leader key
 nnoremap <leader>n :NERDTreeToggle .<CR>
 
+imap <expr> <TAB> neocomplcache#sources#snippets_complete#expandable()     ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 " }}}
 
 " gui settings {{{

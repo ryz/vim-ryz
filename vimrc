@@ -199,7 +199,7 @@ if has ('win32')
     let Tlist_Ctags_Cmd = 'd:\tools\ctags58\ctags.exe' " set Exuberant Ctags directory for TagList
 endif
 
-" NERDTree related
+" NERDTree 
 let NERDTreeShowBookmarks = 1
 let NERDTreeChDirMode = 2
 let NERDTreeIgnore = ['\.vim$', '\~$', '.png', '.swp']
@@ -283,9 +283,9 @@ map <F9> :tabnew<CR>:e $MYVIMRC<CR>
 " SOURCE current file
 map <F10> :so %<CR>
 
-" time and date via F3
-nmap <F3> a<C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR><Esc>
-imap <F3> <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
+" time and date via F2 
+nmap <F2> a<C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR><Esc>
+imap <F2> <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 
 " tabs
 map <S-h> gT
@@ -294,9 +294,6 @@ map <S-l> gt
 "" executing/compiling files
 " execute current file
 map <F5> :!%<CR>
-
-" compile current TeX file with 'pdflatex' (needs MiKTeX)
-map <F6> :!pdflatex % &<CR>
 
 " programming
 

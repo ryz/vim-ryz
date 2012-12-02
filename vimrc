@@ -189,13 +189,11 @@ au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 " plugin-stuff {{{
 " ----------------------
 
-" SnipMate related
+" SnipMate 
 let g:snippets_dir = '$VIM\vimfiles\bundle\snipmate-snippets\snippets'
 
-" SuperTab related
-let g:SuperTabDefaultCompletionType = "context"
 
-" TagList related
+" TagList 
 let Tlist_Use_Right_Window = 1
 if has ('win32')
     let Tlist_Ctags_Cmd = 'd:\tools\ctags58\ctags.exe' " set Exuberant Ctags directory for TagList

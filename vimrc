@@ -300,9 +300,9 @@ nnoremap <leader>n :NERDTreeToggle .<CR>
 " check for gVim
 if has ("gui_running")
 
-    set guifont=ProFont:h9 " set GUI font
+    set guifont=SourceCodePro-Regular:h11 " set GUI font
 
-    set noantialias " turn off font anti aliasing
+    "set noantialias " turn off font anti aliasing
 
     " remove those ugly GUI widgets
     set guioptions-=T " remove the toolbar (icons on top of the screen)

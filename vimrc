@@ -307,7 +307,7 @@ imap <expr> <TAB> neocomplcache#sources#snippets_complete#expandable()     ? "\<
 " check for gVim
 if has ("gui_running")
 
-    set guifont=SourceCodePro-Regular:h11 " set GUI font
+    set guifont=ProFontWindows:h9 " set GUI font
 
     "set noantialias " turn off font anti aliasing
 

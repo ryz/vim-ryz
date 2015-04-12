@@ -322,6 +322,17 @@ if has ("gui_running")
     set guioptions-=T " remove the toolbar (icons on top of the screen)
     set guioptions-=m " remove the menu bar 
     set guioptions-=r " remove the right scroll bar
+
+
+    if has ("win32")
+        " Easy access to the windows clipboard
+        " Remember, the "* register reflects the contents of the clipboard
+
+        " Use the standard windows way of CTRL-X/-C/-V 
+        " Blocks CTRL-C to cancel, obviously
+        source $VIMRUNTIME/mswin.vim
+    endif
+
 endif
 
 " }}}
